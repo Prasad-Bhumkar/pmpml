@@ -1,0 +1,219 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Container for Centering */
+  .container {
+    height: 100vh;
+    display: flex;
+    background: linear-gradient(to bottom, #f3a633, #ffb74d); /* Soft orange gradient */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    border: 1px solid #3b3939;
+  }
+  
+  /* Bus Pass Container */
+  .bus-pass {
+    background-color: #ffffff;
+    width: 320px;
+    border-radius: 12px;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .header {
+    height: 13px;
+    background-color:red;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  /* Details Section */
+  .details {
+    background-color: #ffffff;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 16px;
+  }
+  
+  .id_font{
+    font-size: 18px;
+    color: black;
+  }
+  .d_font{
+    font-size: 11px;
+    color: black;
+  }
+  .row div {
+    font-size: 12px;
+    color: #787c7c;
+  }
+  
+  /* Curved Separator */
+  .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+  }
+  
+  .curve-left,
+  .curve-right {
+    width: 10px;
+    height: 20px;
+    background-color: #f3a633; /* Background matching body color */
+    border: none;
+    border-radius: 10px 0 0 10px; /* Half curve */
+  }
+  
+  .curve-left{
+    width: 10px;
+    height: 20px;
+    background-color: #f3a633; /* Background matching body color */
+    border: none;
+    border-radius: 0 10px 10px 0; /* Half curve */
+  }
+  .curve-left {
+    border-right: none;
+    transform: rotate(0deg); /* No rotation needed */
+  }
+  
+  .curve-right {
+    border-left: none;
+    transform: rotate(0deg);
+  }
+  
+  .upline {
+    width: 100%;
+    height: 0;
+    border-top: 1px dashed transparent;
+    border-image: repeating-linear-gradient(
+      to right,
+      #bbb 0,
+      #bbb 5px,   /* Length of dash */
+      transparent 5px,
+      transparent 10px /* Space between dashes */
+    ) 1;
+  }
+  
+  
+  .line {
+    width: 100%;
+    height: 0;
+    border-top: 1px dashed transparent;
+    border-image: repeating-linear-gradient(
+      to right,
+      #bbb 0,
+      #bbb 5px,   /* Length of dash */
+      transparent 5px,
+      transparent 10px /* Space between dashes */
+    ) 1;
+  }
+  /* Auto Number */
+  .auto-number {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  /* Pass Type */
+  .pass-type {
+    height: 12px;
+    background-color:red;
+    color: white;
+    text-align: center;
+    padding:2px;
+    font-size: 12px;
+  }
+  
+  /* Logo */
+  .logo {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .zoom-logo {
+    width: 60px;
+    height: 60px;
+    animation: zoom-in-out 2s infinite ease-in-out;
+  }
+  
+  /* Zoom Animation */
+  @keyframes zoom-in-out {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+  
+  /* Expiry Time */
+  .expiry {
+    text-align: center;
+    color: #787c7c;
+    font-size: 12px;
+    padding-top: 5px;
+    margin-top: 15px;
+    height: 20px;
+    background-color: #ecf6f8;
+  }
+  
+  /* QR Button */
+.qr-btn {
+    width: 320px;
+    background-color: #e0f7fa;
+    color: #00838f;
+    padding: 12px;
+    border: 1px solid #075e71;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 150px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between QR image and text */
+  }
+  
+  .qr-btn:hover {
+    background-color: #b2ebf2;
+  }
+  
+  /* QR Code Image */
+  .qr-img {
+    width: 20px; /* Adjust size as needed */
+    height: 20px;
+    /* definig margin to center the image and at bottom */
+    
+  }
+  
+  
+  
+  
+  

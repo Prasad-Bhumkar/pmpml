@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="styles2.css" /> -->
+  <style>
+    /* General Styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container for Centering */
+    .container {
+      height: 100vh;
+      display: flex;
+      background: linear-gradient(to bottom, #f3a633, #ffb74d);
+      /* Soft orange gradient */
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 480px;
+      margin: auto;
+      border: 1px solid #3b3939;
+    }
+
+    /* Bus Pass Container */
+    .bus-pass {
+      background-color: #ffffff;
+      width: 320px;
+      border-radius: 12px;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      height: 13px;
+      background-color: red;
+      color: white;
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* Details Section */
+    .details {
+      background-color: #ffffff;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding: 16px;
+    }
+
+    .id_font {
+      font-size: 18px;
+      color: black;
+    }
+
+    .d_font {
+      font-size: 11px;
+      color: black;
+    }
+
+    .row div {
+      font-size: 12px;
+      color: #787c7c;
+    }
+
+    /* Curved Separator */
+    .separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0px;
+    }
+
+    .curve-left,
+    .curve-right {
+      width: 10px;
+      height: 20px;
+      background-color: #f3a633;
+      /* Background matching body color */
+      border: none;
+      border-radius: 10px 0 0 10px;
+      /* Half curve */
+    }
+
+    .curve-left {
+      width: 10px;
+      height: 20px;
+      background-color: #f3a633;
+      /* Background matching body color */
+      border: none;
+      border-radius: 0 10px 10px 0;
+      /* Half curve */
+    }
+
+    .curve-left {
+      border-right: none;
+      transform: rotate(0deg);
+      /* No rotation needed */
+    }
+
+    .curve-right {
+      border-left: none;
+      transform: rotate(0deg);
+    }
+
+    .upline {
+      width: 100%;
+      height: 0;
+      border-top: 1px dashed transparent;
+      border-image: repeating-linear-gradient(to right,
+          #bbb 0,
+          #bbb 5px,
+          /* Length of dash */
+          transparent 5px,
+          transparent 10px
+          /* Space between dashes */
+        ) 1;
+    }
+
+
+    .line {
+      width: 100%;
+      height: 0;
+      border-top: 1px dashed transparent;
+      border-image: repeating-linear-gradient(to right,
+          #bbb 0,
+          #bbb 5px,
+          /* Length of dash */
+          transparent 5px,
+          transparent 10px
+          /* Space between dashes */
+        ) 1;
+    }
+
+    /* Auto Number */
+    .auto-number {
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+
+    /* Pass Type */
+    .pass-type {
+      height: 12px;
+      background-color: red;
+      color: white;
+      text-align: center;
+      padding: 2px;
+      font-size: 12px;
+    }
+
+    /* Logo */
+    .logo {
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .zoom-logo {
+      width: 60px;
+      height: 60px;
+      animation: zoom-in-out 2s infinite ease-in-out;
+    }
+
+    /* Zoom Animation */
+    @keyframes zoom-in-out {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Expiry Time */
+    .expiry {
+      text-align: center;
+      color: #787c7c;
+      font-size: 12px;
+      padding-top: 5px;
+      margin-top: 15px;
+      height: 20px;
+      background-color: #ecf6f8;
+    }
+
+    /* QR Button */
+    .qr-btn {
+      width: 320px;
+      background-color: #e0f7fa;
+      color: #00838f;
+      padding: 12px;
+      border: 1px solid #075e71;
+      border-radius: 12px;
+      font-size: 16px;
+      margin-top: 150px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      /* Space between QR image and text */
+    }
+
+    .qr-btn:hover {
+      background-color: #b2ebf2;
+    }
+
+    /* QR Code Image */
+    .qr-img {
+      width: 20px;
+      /* Adjust size as needed */
+      height: 20px;
+      /* definig margin to center the image and at bottom */
+
+    }
+  </style>
+  <title>Cheacking</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Bus Pass -->
+    <div class="bus-pass">
+      <!-- Header -->
+      <div class="header">
+        पुणे महानगर परिवहन महामंडळ लि.
+      </div>
+
+      <!-- Pass Details -->
+      <div class="details">
+        <div class="row">
+          <div>Pass Type<br /><strong class="id_font">Only PMC</strong></div>
+          <div>ID<br /><strong class="id_font">4930</strong></div>
+          <div>Fare<br /><strong class="id_font">₹40</strong></div>
+        </div>
+
+        <!-- Curved Separator -->
+        <div class="separator">
+          <span class="curve-left"></span>
+          <span class="upline"></span>
+          <span class="curve-right"></span>
+        </div>
+
+        <!-- Booking and Validity Time -->
+        <div class="row">
+          <div>
+            Booking Time<br />
+            <strong><span class="d_font" id="bookingTime"></span></strong>
+          </div>
+          <div>
+            Validity Time<br />
+            <strong><span class="d_font" id="validityTime"></span></strong>
+          </div>
+        </div>
+
+      </div>
+      <!-- Auto Generated Number -->
+      <div class="auto-number" id="autoNumber">Generating...</div>
+
+      <!-- Curved Separator -->
+      <div class="separator">
+        <span class="line"></span>
+      </div>
+
+      <!-- Pass Type -->
+      <div class="pass-type">One Day Pass</div>
+
+      <!-- PMPML Logo with Zoom Effect -->
+      <div class="logo">
+        <img src="pmpl.png" alt="PMPML Logo" class="zoom-logo" />
+      </div>
+
+      <!-- Expiry Countdown -->
+      <div class="expiry">
+        Expires in <span id="countdown"></span>
+      </div>
+    </div>
+
+
+    <!-- QR Button with QR Code -->
+    <button class="qr-btn">
+      <img src="qr.png" alt="QR Code" class="qr-img" />
+      Show QR Code
+    </button>
+
+  </div>
+
+  <script>
+    // Set booking and validity time
+    const bookingDate = new Date();
+    const formattedDate = bookingDate.toLocaleDateString('en-IN', {
+      day: '2-digit',
+      month: 'short',
+      year: '2-digit',
+    });
+
+    const formattedTime = bookingDate.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
+
+    document.getElementById('bookingTime').textContent = `${formattedDate} | 07:18 AM`;
+    document.getElementById('validityTime').textContent = `${formattedDate} | 11:59 PM`;
+
+    // Countdown Timer
+    function updateCountdown() {
+      const now = new Date();
+
+      const endTime = new Date();
+      endTime.setHours(23, 59, 0, 0); // End at 11:59 PM
+
+      if (now <= endTime) {
+        const remainingTime = endTime - now;
+
+        const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+        const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown').textContent =
+          `${hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      } else {
+        document.getElementById('countdown').textContent = "Expired - Restarting tomorrow";
+      }
+    }
+
+    // Function to generate the random number based on booking date and time
+    function generateNumber() {
+      const year = String(bookingDate.getFullYear()).slice(-2); // Last 2 digits of the year
+      const month = String(bookingDate.getMonth() + 1).padStart(2, '0'); // Month in 2 digits
+      const day = String(bookingDate.getDate()).padStart(2, '0'); // Day in 2 digits
+
+      // Extract time from the booking date
+      const hour = String(bookingDate.getHours()).padStart(2, '0'); // Hour in 2 digits
+      const minute = String(bookingDate.getMinutes()).padStart(2, '0'); // Minute in 2 digits
+
+      // Generate random uppercase alphabets (A-Z)
+      const randomAlpha1 = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random alphabet
+      const randomAlpha2 = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random alphabet
+      const randomAlpha3 = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random alphabet
+      const randomAlpha4 = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random alphabet
+
+      // Generate random 2-digit number
+      const random2Digits = Math.floor(10 + Math.random() * 90);
+
+      // Combine all parts to create the final code
+      const generatedNumber = `${year}${month}${day}${hour}${minute}${randomAlpha1}${randomAlpha2}${random2Digits}${randomAlpha3}${randomAlpha4}`;
+
+      // Display the generated number in HTML
+      document.getElementById('autoNumber').textContent = generatedNumber;
+    }
+
+    // Generate number based on booking date and time
+    generateNumber();
+
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // Initialize countdown
+
+
+
+  </script>
+</body>
+
+</html>

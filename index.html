@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Bus App</title>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="pmpl.png" alt="PMPL Logo">
+        </div>
+        <div class="top-icons">
+            <img src="notification.png" alt="Notification">
+            <img src="profile.png" alt="Profile">
+        </div>
+    </div>
+    
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" placeholder="कुठे जायचे आहे?" />
+            
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <div class="action-btn">
+            <span class="icon">🎟️</span>
+            <span>Bus Ticket</span>
+        </div>
+        <div class="action-btn">
+            <span class="icon">👤</span>
+            <span>Daily Pass</span>
+        </div>
+    </div>
+
+    <!-- Additional Options -->
+    <div class="extra-buttons">
+        <div class="option-btn">
+            <span class="icon">🎫</span>
+            <span>View Ticket</span>
+        </div>
+        <a href="index2.html" class="option-btn">
+            <span class="icon">🎫</span>
+            <span>View Pass</span>
+        </a>
+        <div class="option-btn">
+            <span class="icon">🔀</span>
+            <span>Route Timetable</span>
+        </div>
+        <div class="option-btn">
+            <span class="icon">🚇</span>
+            <span>Metro Ticket</span>
+        </div>
+    </div>
+
+    <!-- Near Me Section -->
+    <div class="near-me">
+        <h3>Near Me</h3>
+        <div class="bus-stop">
+            <div class="stop-info">
+                <span class="stop-name">Shiv Shambho Chowk</span>
+                <span class="distance">616 m</span>
+            </div>
+            <div class="bus-status">
+                No upcoming buses at this stop.
+            </div>
+            <button class="more-buses-btn">See More Buses</button>
+        </div>
+    </div>
+
+
+    <!-- Ad Section -->
+<div class="ad-section">
+    <div class="ad-container">
+        <div class="ad-card">
+            <img src="ad11.jpg" alt="Ad 1">
+        </div>
+        <div class="ad-card">
+            <img src="ad11.jpg" alt="Ad 2">
+        </div>
+    </div>
+</div>
+
+<!-- Nearby Section -->
+<div class="nearby-section">
+    <div class="nearby-header">Nearby</div>
+    <div class="map-container">
+        <!-- Embedded Google Map -->
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31559.515519125157!2d73.88650259999999!3d18.520430399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf6f46a15b81%3A0x4d4cb3bdda46a8f7!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1630230702171!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+</div>
+<!-- Share Section -->
+<div class="share-section">
+    <p>आपली PMPML चा आनंद घेत आहात 😍?</p>
+    <p>तुमच्या मित्रांसोबत शेअर करा</p>
+    <button class="share-btn">आता शेअर करा</button>
+    <div class="powered-by">
+        Powered by <span class="chartr-logo">Chartr</span> for PMPML.
+    </div>
+</div>
+<!-- Footer Navigation -->
+<div class="footer-nav">
+    <div class="nav-item active">
+        <span>🏠</span><br>
+        <span>Home</span>
+    </div>
+    <div class="nav-item">
+        <span>🚌</span><br>
+        <span>Buses</span>
+    </div>
+    <div class="nav-item">
+        <span>❓</span><br>
+        <span>Help</span>
+    </div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
